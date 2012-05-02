@@ -2,8 +2,10 @@ Description: Fix PCRE related code after repacking
  Fix a few usages of PCRE after total removal through repacking.
 Author: Obey Arthur Liu <arthur@milliways.fr>
 Last-Update: 2010-02-17
---- a/configure.in
-+++ b/configure.in
+Index: virtuoso-opensource/configure.in
+===================================================================
+--- virtuoso-opensource.orig/configure.in	2012-05-02 16:22:36.215212927 +0200
++++ virtuoso-opensource/configure.in	2012-05-02 16:24:08.503215334 +0200
 @@ -485,6 +485,8 @@
  AC_CHECK_LIB(socket, socket, [VLIBS="-lsocket $VLIBS"], [], $VLIBS) # SVR4 sockets
  fi
@@ -13,8 +15,10 @@ Last-Update: 2010-02-17
  
  ##########################################################################
  ##									##
---- a/libsrc/Wi/bif_regexp.c
-+++ b/libsrc/Wi/bif_regexp.c
+Index: virtuoso-opensource/libsrc/Wi/bif_regexp.c
+===================================================================
+--- virtuoso-opensource.orig/libsrc/Wi/bif_regexp.c	2012-05-02 15:35:11.835138746 +0200
++++ virtuoso-opensource/libsrc/Wi/bif_regexp.c	2012-05-02 16:24:08.503215334 +0200
 @@ -28,7 +28,9 @@
  #include "multibyte.h"
  #include "srvmultibyte.h"
@@ -26,8 +30,10 @@ Last-Update: 2010-02-17
  
  /*
     typedef struct rx_query_s {
---- a/libsrc/Wi/xqf.c
-+++ b/libsrc/Wi/xqf.c
+Index: virtuoso-opensource/libsrc/Wi/xqf.c
+===================================================================
+--- virtuoso-opensource.orig/libsrc/Wi/xqf.c	2012-05-02 15:35:11.000000000 +0200
++++ virtuoso-opensource/libsrc/Wi/xqf.c	2012-05-02 16:24:08.503215334 +0200
 @@ -38,7 +38,9 @@
  #include "xpf.h"
  #include "xqf.h"
@@ -39,9 +45,11 @@ Last-Update: 2010-02-17
  
  #define ecm_isname(c) \
    ( ((c) & ~0xFF) ? (ecm_utf8props[(c)] & ECM_ISNAME) : \
---- a/libsrc/util/Makefile.am
-+++ b/libsrc/util/Makefile.am
-@@ -85,24 +85,26 @@
+Index: virtuoso-opensource/libsrc/util/Makefile.am
+===================================================================
+--- virtuoso-opensource.orig/libsrc/util/Makefile.am	2012-05-02 15:35:11.971138749 +0200
++++ virtuoso-opensource/libsrc/util/Makefile.am	2012-05-02 16:24:08.503215334 +0200
+@@ -87,24 +87,26 @@
  	virt_mbsnrtowcs.c \
  	virt_wcrtomb.c \
  	virt_wcs_mask.c \
@@ -86,7 +94,7 @@ Last-Update: 2010-02-17
  
  
  BUILT_SOURCES = getdate.c
-@@ -121,14 +123,16 @@
+@@ -123,14 +125,16 @@
  	getdate.y \
  	MSG_BG.bin \
  	MSG_EN.bin \

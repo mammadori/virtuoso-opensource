@@ -1,11 +1,9 @@
 use-debian-default-csharp-compiler.patch
-fix-wide-char-encoding.patch
 config-debian-paths.patch
 config-universal-variables.patch
 build-short-timeout.patch
 ftbfs-kfreebsd.patch
 repack-oat.patch
-repack-tutorial.patch
 repack-pcre.patch
 repack-zlib.patch
 build-generated-code-multiple-outputs.patch

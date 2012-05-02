@@ -4,9 +4,11 @@ Description: Shorten test initialization timeouts
  binary.
 Author: Obey Arthur Liu <arthur@milliways.fr>
 Last-Update: 2010-05-12
---- a/appsrc/ODS-Addressbook/make_vad.sh
-+++ b/appsrc/ODS-Addressbook/make_vad.sh
-@@ -93,7 +93,7 @@
+Index: virtuoso-opensource/appsrc/ODS-Addressbook/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-Addressbook/make_vad.sh	2012-05-02 16:01:14.051179489 +0200
++++ virtuoso-opensource/appsrc/ODS-Addressbook/make_vad.sh	2012-05-02 16:22:49.415213272 +0200
+@@ -143,7 +143,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
    starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
@@ -15,30 +17,10 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
    then
---- a/appsrc/ODS-Blog/make_vad.sh
-+++ b/appsrc/ODS-Blog/make_vad.sh
-@@ -112,7 +112,7 @@
-   ddate=`date`
-   starth=`date | cut -f 2 -d :`
-   starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
--  timeout=600
-+  timeout=60
-   $myrm -f *.lck
-   if [ "z$HOST_OS" != "z" ] 
-     then
---- a/appsrc/ODS-Bookmark/make_vad.sh
-+++ b/appsrc/ODS-Bookmark/make_vad.sh
-@@ -97,7 +97,7 @@
-   ddate=`date`
-   starth=`date | cut -f 2 -d :`
-   starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
--  timeout=600
-+  timeout=60
-   $myrm -f *.lck
-   if [ "z$HOST_OS" != "z" ] 
-   then
---- a/appsrc/ODS-Briefcase/make_vad.sh
-+++ b/appsrc/ODS-Briefcase/make_vad.sh
+Index: virtuoso-opensource/appsrc/ODS-Blog/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-Blog/make_vad.sh	2012-05-02 15:35:09.727138690 +0200
++++ virtuoso-opensource/appsrc/ODS-Blog/make_vad.sh	2012-05-02 16:22:49.415213272 +0200
 @@ -113,7 +113,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
@@ -47,10 +29,12 @@ Last-Update: 2010-05-12
 +  timeout=60
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
-   then
---- a/appsrc/ODS-Calendar/make_vad.sh
-+++ b/appsrc/ODS-Calendar/make_vad.sh
-@@ -96,7 +96,7 @@
+     then
+Index: virtuoso-opensource/appsrc/ODS-Bookmark/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-Bookmark/make_vad.sh	2012-05-02 16:01:14.063179489 +0200
++++ virtuoso-opensource/appsrc/ODS-Bookmark/make_vad.sh	2012-05-02 16:22:49.415213272 +0200
+@@ -143,7 +143,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
    starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
@@ -59,9 +43,11 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
    then
---- a/appsrc/ODS-Community/make_vad.sh
-+++ b/appsrc/ODS-Community/make_vad.sh
-@@ -100,7 +100,7 @@
+Index: virtuoso-opensource/appsrc/ODS-Briefcase/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-Briefcase/make_vad.sh	2012-05-02 16:01:14.067179490 +0200
++++ virtuoso-opensource/appsrc/ODS-Briefcase/make_vad.sh	2012-05-02 16:22:49.415213272 +0200
+@@ -154,7 +154,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
    starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
@@ -70,8 +56,36 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
    then
---- a/appsrc/ODS-Discussion/make_vad.sh
-+++ b/appsrc/ODS-Discussion/make_vad.sh
+Index: virtuoso-opensource/appsrc/ODS-Calendar/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-Calendar/make_vad.sh	2012-05-02 16:01:14.075179489 +0200
++++ virtuoso-opensource/appsrc/ODS-Calendar/make_vad.sh	2012-05-02 16:22:49.415213272 +0200
+@@ -142,7 +142,7 @@
+   ddate=`date`
+   starth=`date | cut -f 2 -d :`
+   starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
+-  timeout=600
++  timeout=60
+   $myrm -f *.lck
+   if [ "z$HOST_OS" != "z" ] 
+   then
+Index: virtuoso-opensource/appsrc/ODS-Community/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-Community/make_vad.sh	2012-05-02 15:35:09.807138692 +0200
++++ virtuoso-opensource/appsrc/ODS-Community/make_vad.sh	2012-05-02 16:22:49.415213272 +0200
+@@ -138,7 +138,7 @@
+   ddate=`date`
+   starth=`date | cut -f 2 -d :`
+   starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
+-  timeout=600
++  timeout=60
+   $myrm -f *.lck
+   if [ "z$HOST_OS" != "z" ] 
+   then
+Index: virtuoso-opensource/appsrc/ODS-Discussion/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-Discussion/make_vad.sh	2012-05-02 15:35:09.831138693 +0200
++++ virtuoso-opensource/appsrc/ODS-Discussion/make_vad.sh	2012-05-02 16:22:49.419213272 +0200
 @@ -110,7 +110,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
@@ -81,9 +95,11 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
  	then
---- a/appsrc/ODS-FeedManager/make_vad.sh
-+++ b/appsrc/ODS-FeedManager/make_vad.sh
-@@ -96,7 +96,7 @@
+Index: virtuoso-opensource/appsrc/ODS-FeedManager/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-FeedManager/make_vad.sh	2012-05-02 16:01:14.079179489 +0200
++++ virtuoso-opensource/appsrc/ODS-FeedManager/make_vad.sh	2012-05-02 16:22:49.419213272 +0200
+@@ -142,7 +142,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
    starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
@@ -92,9 +108,11 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
    then
---- a/appsrc/ODS-Framework/make_vad.sh
-+++ b/appsrc/ODS-Framework/make_vad.sh
-@@ -138,7 +138,7 @@
+Index: virtuoso-opensource/appsrc/ODS-Framework/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-Framework/make_vad.sh	2012-05-02 15:35:09.899138695 +0200
++++ virtuoso-opensource/appsrc/ODS-Framework/make_vad.sh	2012-05-02 16:22:49.419213272 +0200
+@@ -140,7 +140,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
    starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
@@ -103,8 +121,10 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ]
    then
---- a/appsrc/ODS-Framework/oauth/make_vad.sh
-+++ b/appsrc/ODS-Framework/oauth/make_vad.sh
+Index: virtuoso-opensource/appsrc/ODS-Framework/oauth/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-Framework/oauth/make_vad.sh	2012-05-02 15:35:09.903138695 +0200
++++ virtuoso-opensource/appsrc/ODS-Framework/oauth/make_vad.sh	2012-05-02 16:22:49.419213272 +0200
 @@ -188,7 +188,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
@@ -114,9 +134,11 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
    then
---- a/appsrc/ODS-Gallery/make_vad.sh
-+++ b/appsrc/ODS-Gallery/make_vad.sh
-@@ -101,7 +101,7 @@
+Index: virtuoso-opensource/appsrc/ODS-Gallery/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-Gallery/make_vad.sh	2012-05-02 15:35:09.939138696 +0200
++++ virtuoso-opensource/appsrc/ODS-Gallery/make_vad.sh	2012-05-02 16:22:49.419213272 +0200
+@@ -126,7 +126,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
    starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
@@ -125,9 +147,11 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
    then
---- a/appsrc/ODS-Polls/make_vad.sh
-+++ b/appsrc/ODS-Polls/make_vad.sh
-@@ -95,7 +95,7 @@
+Index: virtuoso-opensource/appsrc/ODS-Polls/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-Polls/make_vad.sh	2012-05-02 16:01:14.115179490 +0200
++++ virtuoso-opensource/appsrc/ODS-Polls/make_vad.sh	2012-05-02 16:22:49.419213272 +0200
+@@ -130,7 +130,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
    starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
@@ -136,9 +160,11 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
    then
---- a/appsrc/ODS-WebMail/make_vad.sh
-+++ b/appsrc/ODS-WebMail/make_vad.sh
-@@ -96,7 +96,7 @@
+Index: virtuoso-opensource/appsrc/ODS-WebMail/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-WebMail/make_vad.sh	2012-05-02 15:35:09.955138697 +0200
++++ virtuoso-opensource/appsrc/ODS-WebMail/make_vad.sh	2012-05-02 16:22:49.419213272 +0200
+@@ -141,7 +141,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
    starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
@@ -147,9 +173,11 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
    then
---- a/appsrc/ODS-Wiki/make_vad.sh
-+++ b/appsrc/ODS-Wiki/make_vad.sh
-@@ -131,7 +131,7 @@
+Index: virtuoso-opensource/appsrc/ODS-Wiki/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/appsrc/ODS-Wiki/make_vad.sh	2012-05-02 15:35:09.975138697 +0200
++++ virtuoso-opensource/appsrc/ODS-Wiki/make_vad.sh	2012-05-02 16:22:49.419213272 +0200
+@@ -132,7 +132,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
    starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
@@ -158,9 +186,11 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
    then
---- a/binsrc/b3s/make_vad.sh
-+++ b/binsrc/b3s/make_vad.sh
-@@ -203,7 +203,7 @@
+Index: virtuoso-opensource/binsrc/b3s/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/b3s/make_vad.sh	2012-05-02 15:35:10.007138698 +0200
++++ virtuoso-opensource/binsrc/b3s/make_vad.sh	2012-05-02 16:22:49.419213272 +0200
+@@ -204,7 +204,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
    starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
@@ -169,8 +199,10 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ]
    then
---- a/binsrc/bpel/make_vad.sh
-+++ b/binsrc/bpel/make_vad.sh
+Index: virtuoso-opensource/binsrc/bpel/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/bpel/make_vad.sh	2012-05-02 15:35:10.023138698 +0200
++++ virtuoso-opensource/binsrc/bpel/make_vad.sh	2012-05-02 16:22:49.419213272 +0200
 @@ -254,7 +254,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
@@ -180,8 +212,10 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
  	then
---- a/binsrc/hosting/mono/tests/tclrsrv.sh
-+++ b/binsrc/hosting/mono/tests/tclrsrv.sh
+Index: virtuoso-opensource/binsrc/hosting/mono/tests/tclrsrv.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/hosting/mono/tests/tclrsrv.sh	2012-05-02 15:35:10.091138700 +0200
++++ virtuoso-opensource/binsrc/hosting/mono/tests/tclrsrv.sh	2012-05-02 16:22:49.419213272 +0200
 @@ -217,7 +217,7 @@
        ddate=`date`
        starth=`date | cut -f 2 -d :`
@@ -191,8 +225,10 @@ Last-Update: 2010-05-12
        rm -f *.lck
        $SERVER +foreground -c tclr.ini $* 1>/dev/null & 
        stat="true"
---- a/binsrc/isparql/make_vad.sh
-+++ b/binsrc/isparql/make_vad.sh
+Index: virtuoso-opensource/binsrc/isparql/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/isparql/make_vad.sh	2012-05-02 15:35:10.099138700 +0200
++++ virtuoso-opensource/binsrc/isparql/make_vad.sh	2012-05-02 16:22:49.419213272 +0200
 @@ -117,7 +117,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
@@ -202,9 +238,11 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ]
      then
---- a/binsrc/rdf_mappers/make_vad.sh
-+++ b/binsrc/rdf_mappers/make_vad.sh
-@@ -234,7 +234,7 @@
+Index: virtuoso-opensource/binsrc/rdf_mappers/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/rdf_mappers/make_vad.sh	2012-05-02 15:35:10.131138701 +0200
++++ virtuoso-opensource/binsrc/rdf_mappers/make_vad.sh	2012-05-02 16:22:49.423213272 +0200
+@@ -251,7 +251,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
    starts=`date | cut -f 3 -d :|cut -f 1 -d " "`
@@ -213,8 +251,10 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
    then
---- a/binsrc/samples/demo/make_vad.sh
-+++ b/binsrc/samples/demo/make_vad.sh
+Index: virtuoso-opensource/binsrc/samples/demo/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/samples/demo/make_vad.sh	2012-05-02 16:01:14.135179490 +0200
++++ virtuoso-opensource/binsrc/samples/demo/make_vad.sh	2012-05-02 16:22:49.423213272 +0200
 @@ -115,7 +115,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
@@ -224,8 +264,10 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
    then
---- a/binsrc/samples/demo/mkdemo.sh
-+++ b/binsrc/samples/demo/mkdemo.sh
+Index: virtuoso-opensource/binsrc/samples/demo/mkdemo.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/samples/demo/mkdemo.sh	2012-05-02 15:35:10.299138706 +0200
++++ virtuoso-opensource/binsrc/samples/demo/mkdemo.sh	2012-05-02 16:22:49.423213272 +0200
 @@ -140,7 +140,7 @@
  
  START_SERVER()
@@ -235,8 +277,10 @@ Last-Update: 2010-05-12
  
    ECHO "Starting Virtuoso DEMO server ..."
    if [ "z$HOST_OS" != "z" ] 
---- a/binsrc/samples/demo/mkdoc.sh
-+++ b/binsrc/samples/demo/mkdoc.sh
+Index: virtuoso-opensource/binsrc/samples/demo/mkdoc.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/samples/demo/mkdoc.sh	2012-05-02 16:01:14.135179490 +0200
++++ virtuoso-opensource/binsrc/samples/demo/mkdoc.sh	2012-05-02 16:22:49.423213272 +0200
 @@ -161,7 +161,7 @@
  {
     if [ "z$DEMODB" = "z" ]
@@ -246,8 +290,10 @@ Last-Update: 2010-05-12
  
         ECHO "Starting Virtuoso server ..."
         if [ "z$HOST_OS" != "z" ] 
---- a/binsrc/samples/sparql_demo/make_vad.sh
-+++ b/binsrc/samples/sparql_demo/make_vad.sh
+Index: virtuoso-opensource/binsrc/samples/sparql_demo/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/samples/sparql_demo/make_vad.sh	2012-05-02 15:35:10.311138706 +0200
++++ virtuoso-opensource/binsrc/samples/sparql_demo/make_vad.sh	2012-05-02 16:22:49.423213272 +0200
 @@ -113,7 +113,7 @@
      ddate=`date`
      starth=`date | cut -f 2 -d :`
@@ -257,8 +303,10 @@ Last-Update: 2010-05-12
      $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
      then
---- a/binsrc/sync/make_vad.sh
-+++ b/binsrc/sync/make_vad.sh
+Index: virtuoso-opensource/binsrc/sync/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/sync/make_vad.sh	2012-05-02 15:35:10.339138707 +0200
++++ virtuoso-opensource/binsrc/sync/make_vad.sh	2012-05-02 16:22:49.423213272 +0200
 @@ -104,7 +104,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
@@ -268,8 +316,10 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "x$HOST_OS" != "x" ]
    then
---- a/binsrc/tutorial/make_vad.sh
-+++ b/binsrc/tutorial/make_vad.sh
+Index: virtuoso-opensource/binsrc/tutorial/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tutorial/make_vad.sh	2012-05-02 15:35:10.535138711 +0200
++++ virtuoso-opensource/binsrc/tutorial/make_vad.sh	2012-05-02 16:22:49.423213272 +0200
 @@ -104,7 +104,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
@@ -279,8 +329,10 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "z$HOST_OS" != "z" ] 
    then
---- a/binsrc/vsp/admin/debug/make_vad.sh
-+++ b/binsrc/vsp/admin/debug/make_vad.sh
+Index: virtuoso-opensource/binsrc/vsp/admin/debug/make_vad.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/vsp/admin/debug/make_vad.sh	2012-05-02 15:35:10.739138717 +0200
++++ virtuoso-opensource/binsrc/vsp/admin/debug/make_vad.sh	2012-05-02 16:22:49.423213272 +0200
 @@ -70,7 +70,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
@@ -290,8 +342,10 @@ Last-Update: 2010-05-12
    $myrm -f *.lck
    if [ "x$HOST_OS" != "x" ]
  	then
---- a/binsrc/vspx/suite/vspx_suite.sh
-+++ b/binsrc/vspx/suite/vspx_suite.sh
+Index: virtuoso-opensource/binsrc/vspx/suite/vspx_suite.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/vspx/suite/vspx_suite.sh	2012-05-02 15:35:10.791138718 +0200
++++ virtuoso-opensource/binsrc/vspx/suite/vspx_suite.sh	2012-05-02 16:22:49.423213272 +0200
 @@ -44,7 +44,7 @@
    ddate=`date`
    starth=`date | cut -f 2 -d :`
@@ -301,8 +355,10 @@ Last-Update: 2010-05-12
    rm -f *.lck
    $SERVER
    stat="true"
---- a/binsrc/yacutia/mkvad.sh
-+++ b/binsrc/yacutia/mkvad.sh
+Index: virtuoso-opensource/binsrc/yacutia/mkvad.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/yacutia/mkvad.sh	2012-05-02 15:35:10.839138719 +0200
++++ virtuoso-opensource/binsrc/yacutia/mkvad.sh	2012-05-02 16:22:49.423213272 +0200
 @@ -148,7 +148,7 @@
  
  START_SERVER()
@@ -312,8 +368,10 @@ Last-Update: 2010-05-12
  
    ECHO "Starting Virtuoso server ..."
    if [ "z$HOST_OS" != "z" ]
---- a/binsrc/bpel/tests/tpcc/run.sh
-+++ b/binsrc/bpel/tests/tpcc/run.sh
+Index: virtuoso-opensource/binsrc/bpel/tests/tpcc/run.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/bpel/tests/tpcc/run.sh	2012-05-02 15:35:10.059138699 +0200
++++ virtuoso-opensource/binsrc/bpel/tests/tpcc/run.sh	2012-05-02 16:22:49.423213272 +0200
 @@ -167,17 +167,17 @@
  cat ../dbservices.wsdl | sed -e "s/HTTPPORTDB/$HTTPPORTDB/g" > bpeltpcc/dbservices.wsdl
  cat ../tdservices.wsdl | sed -e "s/HTTPPORTTD/$HTTPPORTTD/g" > bpeltpcc/tdservices.wsdl
@@ -335,8 +393,10 @@ Last-Update: 2010-05-12
  cd ..
  
  # Configure endpoint hosts
---- a/binsrc/tests/biftest/tests/tjavavm.sh
-+++ b/binsrc/tests/biftest/tests/tjavavm.sh
+Index: virtuoso-opensource/binsrc/tests/biftest/tests/tjavavm.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/biftest/tests/tjavavm.sh	2012-05-02 15:35:10.343138706 +0200
++++ virtuoso-opensource/binsrc/tests/biftest/tests/tjavavm.sh	2012-05-02 16:22:49.423213272 +0200
 @@ -103,7 +103,7 @@
  MAKECFG_FILE ../../suite/$TESTCFGFILE $PORT $CFGFILE
  
@@ -346,8 +406,10 @@ Last-Update: 2010-05-12
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < java_ts.sql
  
---- a/binsrc/tests/biftest/thook.sh
-+++ b/binsrc/tests/biftest/thook.sh
+Index: virtuoso-opensource/binsrc/tests/biftest/thook.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/biftest/thook.sh	2012-05-02 15:35:10.347138706 +0200
++++ virtuoso-opensource/binsrc/tests/biftest/thook.sh	2012-05-02 16:22:49.423213272 +0200
 @@ -23,7 +23,7 @@
  
  OUTPUT=thook.output
@@ -366,8 +428,10 @@ Last-Update: 2010-05-12
  RUN $ISQL $DSN dba dba PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT thook.sql
  
  RUN $ISQL $DSN MANAGER MANAGER PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT thook1.sql
---- a/binsrc/tests/dotnet/test_server.sh
-+++ b/binsrc/tests/dotnet/test_server.sh
+Index: virtuoso-opensource/binsrc/tests/dotnet/test_server.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/dotnet/test_server.sh	2012-05-02 15:35:10.375138708 +0200
++++ virtuoso-opensource/binsrc/tests/dotnet/test_server.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -149,7 +149,7 @@
  
  if [ -f VirtuosoClientSuite/OpenLink.Data.$CLIENT ] ; then
@@ -377,8 +441,10 @@ Last-Update: 2010-05-12
  
  cd VirtuosoClientSuite
  if [ "x$DTC_TEST" != "x" ]
---- a/binsrc/tests/lubm/tlubm.sh
-+++ b/binsrc/tests/lubm/tlubm.sh
+Index: virtuoso-opensource/binsrc/tests/lubm/tlubm.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/lubm/tlubm.sh	2012-05-02 15:35:10.383138707 +0200
++++ virtuoso-opensource/binsrc/tests/lubm/tlubm.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -40,7 +40,7 @@
  fi
  
@@ -388,8 +454,10 @@ Last-Update: 2010-05-12
  
  BANNER "LUBM LOAD"
  
---- a/binsrc/tests/suite/bpel.sh
-+++ b/binsrc/tests/suite/bpel.sh
+Index: virtuoso-opensource/binsrc/tests/suite/bpel.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/bpel.sh	2012-05-02 15:35:10.391138708 +0200
++++ virtuoso-opensource/binsrc/tests/suite/bpel.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -225,7 +225,7 @@
  if [ "$TEST_ECHO" = "yes" ] ; then
  
@@ -442,8 +510,10 @@ Last-Update: 2010-05-12
  cd ../fault1
  DSN=$DS1
  RUN $ISQL $DS1 dba dba PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT -u 'http_port_two=$HP2' < processXQuery/ini.sql
---- a/binsrc/tests/suite/byteorder.sh
-+++ b/binsrc/tests/suite/byteorder.sh
+Index: virtuoso-opensource/binsrc/tests/suite/byteorder.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/byteorder.sh	2012-05-02 15:35:10.391138708 +0200
++++ virtuoso-opensource/binsrc/tests/suite/byteorder.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -87,7 +87,7 @@
  
  SHUTDOWN_SERVER
@@ -453,8 +523,10 @@ Last-Update: 2010-05-12
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < byteorder.sql
  
---- a/binsrc/tests/suite/gtkbench.sh
-+++ b/binsrc/tests/suite/gtkbench.sh
+Index: virtuoso-opensource/binsrc/tests/suite/gtkbench.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/gtkbench.sh	2012-05-02 15:35:10.395138708 +0200
++++ virtuoso-opensource/binsrc/tests/suite/gtkbench.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -70,7 +70,7 @@
  MAKECFG_FILE $TESTCFGFILE $PORT $CFGFILE
  
@@ -464,8 +536,10 @@ Last-Update: 2010-05-12
  
  LOG "Creating the schema"
  RUN $GTKBENCH $LOGIN -C
---- a/binsrc/tests/suite/inprocess.sh
-+++ b/binsrc/tests/suite/inprocess.sh
+Index: virtuoso-opensource/binsrc/tests/suite/inprocess.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/inprocess.sh	2012-05-02 15:35:10.395138708 +0200
++++ virtuoso-opensource/binsrc/tests/suite/inprocess.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -36,7 +36,7 @@
  rm -f $DBLOGFILE
  rm -f $DBFILE
@@ -475,8 +549,10 @@ Last-Update: 2010-05-12
  
  RUN $INS $DSN 1000 100 dba dba usedt
  if test $STATUS -ne 0
---- a/binsrc/tests/suite/large_db.sh
-+++ b/binsrc/tests/suite/large_db.sh
+Index: virtuoso-opensource/binsrc/tests/suite/large_db.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/large_db.sh	2012-05-02 15:35:10.395138708 +0200
++++ virtuoso-opensource/binsrc/tests/suite/large_db.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -44,7 +44,7 @@
  then
  
@@ -522,8 +598,10 @@ Last-Update: 2010-05-12
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < large_db_5g.sql
  
---- a/binsrc/tests/suite/msdtc.sh
-+++ b/binsrc/tests/suite/msdtc.sh
+Index: virtuoso-opensource/binsrc/tests/suite/msdtc.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/msdtc.sh	2012-05-02 15:35:10.399138708 +0200
++++ virtuoso-opensource/binsrc/tests/suite/msdtc.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -146,7 +146,7 @@
  
  LOGFILE=../msdtc.output
@@ -560,8 +638,10 @@ Last-Update: 2010-05-12
  cd ..
  
  RUN $ISQL $DS2 PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < msdtc_conn_check.sql
---- a/binsrc/tests/suite/nwxml.sh
-+++ b/binsrc/tests/suite/nwxml.sh
+Index: virtuoso-opensource/binsrc/tests/suite/nwxml.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/nwxml.sh	2012-05-02 15:35:10.403138708 +0200
++++ virtuoso-opensource/binsrc/tests/suite/nwxml.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -35,7 +35,7 @@
  cp "${HOME}/binsrc/samples/demo/noise.txt" .
  rm -f $DELETEMASK
@@ -598,8 +678,10 @@ Last-Update: 2010-05-12
  
  #RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < nwxmltype3b.sql
  #if test $STATUS -ne 0
---- a/binsrc/tests/suite/obackup.sh
-+++ b/binsrc/tests/suite/obackup.sh
+Index: virtuoso-opensource/binsrc/tests/suite/obackup.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/obackup.sh	2012-05-02 15:35:10.407138708 +0200
++++ virtuoso-opensource/binsrc/tests/suite/obackup.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -46,7 +46,7 @@
  MAKECFG_FILE $TESTCFGFILE $PORT $CFGFILE
  
@@ -672,8 +754,10 @@ Last-Update: 2010-05-12
  
  echo "Checking tpcc database..."
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < ob_tpcc_check.sql
---- a/binsrc/tests/suite/oledb.sh
-+++ b/binsrc/tests/suite/oledb.sh
+Index: virtuoso-opensource/binsrc/tests/suite/oledb.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/oledb.sh	2012-05-02 15:35:10.407138708 +0200
++++ virtuoso-opensource/binsrc/tests/suite/oledb.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -116,7 +116,7 @@
  
  #REGISTER_PROVIDER
@@ -683,8 +767,10 @@ Last-Update: 2010-05-12
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < nwdemo.sql
  if [ $STATUS -ne 0 ]; then
---- a/binsrc/tests/suite/rtest.sh
-+++ b/binsrc/tests/suite/rtest.sh
+Index: virtuoso-opensource/binsrc/tests/suite/rtest.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/rtest.sh	2012-05-02 15:35:10.411138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/rtest.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -65,7 +65,7 @@
  cd remote1
  MAKECFG_FILE ../$TESTCFGFILE $DS1 $CFGFILE
@@ -712,8 +798,10 @@ Last-Update: 2010-05-12
  cd ..
  
  RUN $ISQL $DS2 PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < rtest5.sql
---- a/binsrc/tests/suite/tblob_recode.sh
-+++ b/binsrc/tests/suite/tblob_recode.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tblob_recode.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tblob_recode.sh	2012-05-02 15:35:10.415138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tblob_recode.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -86,7 +86,7 @@
  
  SHUTDOWN_SERVER
@@ -723,16 +811,20 @@ Last-Update: 2010-05-12
  
  gunzip -c pdd_txt.gz >pdd.txt
  
---- a/binsrc/tests/suite/tclstart.sh
-+++ b/binsrc/tests/suite/tclstart.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tclstart.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tclstart.sh	2012-05-02 15:35:10.415138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tclstart.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -52,4 +52,4 @@
  export BACKUP_DUMP_OPTION CRASH_DUMP_OPTION TESTCFGFILE SERVER
  
  . ./test_fn.sh
 -START_SERVER $PORT 1000
 +START_SERVER $PORT 60
---- a/binsrc/tests/suite/tcpt.sh
-+++ b/binsrc/tests/suite/tcpt.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tcpt.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tcpt.sh	2012-05-02 15:35:10.415138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tcpt.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -37,7 +37,7 @@
  MAKECFG_FILE $TESTCFGFILE $PORT $CFGFILE
  
@@ -768,8 +860,10 @@ Last-Update: 2010-05-12
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < tcptck.sql
  
---- a/binsrc/tests/suite/tdav.sh
-+++ b/binsrc/tests/suite/tdav.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tdav.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tdav.sh	2012-05-02 15:35:10.415138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tdav.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -81,7 +81,7 @@
  _dsn=$DSN
  DSN=$DS1
@@ -779,9 +873,11 @@ Last-Update: 2010-05-12
  CHECK_HTTP_PORT $HTTPPORT
  
  
---- a/binsrc/tests/suite/tdav_meta.sh
-+++ b/binsrc/tests/suite/tdav_meta.sh
-@@ -89,7 +89,7 @@
+Index: virtuoso-opensource/binsrc/tests/suite/tdav_meta.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tdav_meta.sh	2012-05-02 15:35:10.415138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tdav_meta.sh	2012-05-02 16:22:49.427213272 +0200
+@@ -95,7 +95,7 @@
  _dsn=$DSN
  DSN=$DS1
  SHUTDOWN_SERVER
@@ -790,8 +886,10 @@ Last-Update: 2010-05-12
  CHECK_HTTP_PORT $HTTPPORT
  
  LOG "test1"
---- a/binsrc/tests/suite/tdbp.sh
-+++ b/binsrc/tests/suite/tdbp.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tdbp.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tdbp.sh	2012-05-02 15:35:10.423138708 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tdbp.sh	2012-05-02 16:22:49.427213272 +0200
 @@ -183,7 +183,7 @@
  
  SHUTDOWN_SERVER
@@ -819,8 +917,10 @@ Last-Update: 2010-05-12
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < tmulgrp2.sql
  if test $STATUS -ne 0
---- a/binsrc/tests/suite/tdconv.sh
-+++ b/binsrc/tests/suite/tdconv.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tdconv.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tdconv.sh	2012-05-02 15:35:10.423138708 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tdconv.sh	2012-05-02 16:22:49.431213273 +0200
 @@ -210,7 +210,7 @@
  
  SHUTDOWN_SERVER
@@ -830,8 +930,10 @@ Last-Update: 2010-05-12
  
  
  
---- a/binsrc/tests/suite/tdrop.sh
-+++ b/binsrc/tests/suite/tdrop.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tdrop.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tdrop.sh	2012-05-02 15:35:10.423138708 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tdrop.sh	2012-05-02 16:22:49.431213273 +0200
 @@ -73,7 +73,7 @@
  rm -f $DBFILE
  MakeIni
@@ -866,8 +968,10 @@ Last-Update: 2010-05-12
  RUN $ISQL $DS1 PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < tdrop2.sql
  
  SHUTDOWN_SERVER
---- a/binsrc/tests/suite/testall.sh
-+++ b/binsrc/tests/suite/testall.sh
+Index: virtuoso-opensource/binsrc/tests/suite/testall.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/testall.sh	2012-05-02 15:35:10.423138708 +0200
++++ virtuoso-opensource/binsrc/tests/suite/testall.sh	2012-05-02 16:22:49.431213273 +0200
 @@ -150,7 +150,7 @@
  #
  #  Start the server once:
@@ -886,9 +990,11 @@ Last-Update: 2010-05-12
  
  LOG "Getting the status of database into file ident.txt"
  if $ISQL $DSN "EXEC=status();" VERBOSE=OFF ERRORS=STDOUT > ident.txt
---- a/binsrc/tests/suite/thttp.sh
-+++ b/binsrc/tests/suite/thttp.sh
-@@ -799,7 +799,7 @@
+Index: virtuoso-opensource/binsrc/tests/suite/thttp.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/thttp.sh	2012-05-02 15:35:10.427138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/thttp.sh	2012-05-02 16:22:49.431213273 +0200
+@@ -817,7 +817,7 @@
       BLOG_TEST=0  
       LOG "ODS & Blog2 VAD packages are not built"
     fi
@@ -897,8 +1003,10 @@ Last-Update: 2010-05-12
     sleep 1
     if [ $BLOG_TEST -eq 1 ]
     then
---- a/binsrc/tests/suite/timsg.sh
-+++ b/binsrc/tests/suite/timsg.sh
+Index: virtuoso-opensource/binsrc/tests/suite/timsg.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/timsg.sh	2012-05-02 15:35:10.427138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/timsg.sh	2012-05-02 16:22:49.431213273 +0200
 @@ -73,7 +73,7 @@
     ;;
  esac   
@@ -908,8 +1016,10 @@ Last-Update: 2010-05-12
  
  #make another test file, the original text_1947.db.test is no longer in the db
  cp words.esp test_1947.db.test
---- a/binsrc/tests/suite/tjdbc.sh
-+++ b/binsrc/tests/suite/tjdbc.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tjdbc.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tjdbc.sh	2012-05-02 15:35:10.427138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tjdbc.sh	2012-05-02 16:22:49.431213273 +0200
 @@ -41,7 +41,7 @@
  rm -f $DBFILE
  MAKECFG_FILE $TESTCFGFILE $PORT $CFGFILE
@@ -928,8 +1038,10 @@ Last-Update: 2010-05-12
  
  ECHO "STARTED: JDBC 3 Test suite"
  cd $JDBCDIR
---- a/binsrc/tests/suite/tpcd.sh
-+++ b/binsrc/tests/suite/tpcd.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tpcd.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tpcd.sh	2012-05-02 15:35:10.435138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tpcd.sh	2012-05-02 16:22:49.431213273 +0200
 @@ -58,7 +58,7 @@
  mkdir tpcdremote1
  cd tpcdremote1
@@ -948,8 +1060,10 @@ Last-Update: 2010-05-12
  cd ..
  
  LOG
---- a/binsrc/tests/suite/tproviders.sh
-+++ b/binsrc/tests/suite/tproviders.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tproviders.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tproviders.sh	2012-05-02 15:35:10.439138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tproviders.sh	2012-05-02 16:22:49.431213273 +0200
 @@ -51,7 +51,7 @@
  NIGHTLY_PORT=$PORT
  export NIGHTLY_PORT
@@ -959,8 +1073,10 @@ Last-Update: 2010-05-12
  
  #
  #   Run Jena tests
---- a/binsrc/tests/suite/tproxy.sh
-+++ b/binsrc/tests/suite/tproxy.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tproxy.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tproxy.sh	2012-05-02 15:35:10.439138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tproxy.sh	2012-05-02 16:22:49.431213273 +0200
 @@ -243,7 +243,7 @@
     GenHTML
     GenVSP
@@ -970,8 +1086,10 @@ Last-Update: 2010-05-12
     sleep 1
     cd ..
  
---- a/binsrc/tests/suite/trecov.sh
-+++ b/binsrc/tests/suite/trecov.sh
+Index: virtuoso-opensource/binsrc/tests/suite/trecov.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/trecov.sh	2012-05-02 15:35:10.439138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/trecov.sh	2012-05-02 16:22:49.431213273 +0200
 @@ -35,7 +35,7 @@
  MAKECFG_FILE $TESTCFGFILE $PORT $CFGFILE
  
@@ -1026,8 +1144,10 @@ Last-Update: 2010-05-12
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < recovck1_noreg.sql
  if test $STATUS -ne 0
---- a/binsrc/tests/suite/trecov_schema.sh
-+++ b/binsrc/tests/suite/trecov_schema.sh
+Index: virtuoso-opensource/binsrc/tests/suite/trecov_schema.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/trecov_schema.sh	2012-05-02 15:35:10.439138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/trecov_schema.sh	2012-05-02 16:22:49.431213273 +0200
 @@ -45,7 +45,7 @@
  esac	  
  
@@ -1055,8 +1175,10 @@ Last-Update: 2010-05-12
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < recovck1_noreg.sql
  if test $STATUS -ne 0
---- a/binsrc/tests/suite/trepl.sh
-+++ b/binsrc/tests/suite/trepl.sh
+Index: virtuoso-opensource/binsrc/tests/suite/trepl.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/trepl.sh	2012-05-02 15:35:10.439138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/trepl.sh	2012-05-02 16:22:49.431213273 +0200
 @@ -284,7 +284,7 @@
  MakeConfig $DBNAME1 $http1 $DS1
  CHECK_PORT $http1
@@ -1084,8 +1206,10 @@ Last-Update: 2010-05-12
   cd ..
   fi
  }
---- a/binsrc/tests/suite/treplh.sh
-+++ b/binsrc/tests/suite/treplh.sh
+Index: virtuoso-opensource/binsrc/tests/suite/treplh.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/treplh.sh	2012-05-02 15:35:10.439138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/treplh.sh	2012-05-02 16:22:49.431213273 +0200
 @@ -175,14 +175,14 @@
  MakeConfig $DBNAME1 $http1 $DS1
  CHECK_PORT $http1
@@ -1103,8 +1227,10 @@ Last-Update: 2010-05-12
  cd ..
  
  SILENT=0
---- a/binsrc/tests/suite/tsec.sh
-+++ b/binsrc/tests/suite/tsec.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tsec.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tsec.sh	2012-05-02 15:35:10.439138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tsec.sh	2012-05-02 16:22:49.431213273 +0200
 @@ -36,7 +36,7 @@
  rm -f $DBLOGFILE
  rm -f $DBFILE
@@ -1114,7 +1240,7 @@ Last-Update: 2010-05-12
  
  RUN $INS $DSN 20 100
  # note that the test script filename has to be given as the fourth
-@@ -147,7 +147,7 @@
+@@ -162,7 +162,7 @@
  
  
  SHUTDOWN_SERVER
@@ -1123,8 +1249,10 @@ Last-Update: 2010-05-12
  
  #BUGZILLA 6057
  
---- a/binsrc/tests/suite/tsoap12.sh
-+++ b/binsrc/tests/suite/tsoap12.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tsoap12.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tsoap12.sh	2012-05-02 15:35:10.443138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tsoap12.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -4273,7 +4273,7 @@
  sav_log=$LOGFILE
  LOGFILE=tsoap12.output
@@ -1134,8 +1262,10 @@ Last-Update: 2010-05-12
  LOGFILE=$sav_log
  export LOGFILE
  
---- a/binsrc/tests/suite/tsparql.sh
-+++ b/binsrc/tests/suite/tsparql.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tsparql.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tsparql.sh	2012-05-02 15:35:10.443138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tsparql.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -42,7 +42,7 @@
  STOP_SERVER
  rm -f $DELETEMASK
@@ -1145,8 +1275,10 @@ Last-Update: 2010-05-12
  sleep 5
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT -u "HTTPPORT=$HTTPPORT" -u "HTTPPORT1=$HTTPPORT1" < tsparql.sql
---- a/binsrc/tests/suite/tsparql_demo.sh
-+++ b/binsrc/tests/suite/tsparql_demo.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tsparql_demo.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tsparql_demo.sh	2012-05-02 15:35:10.443138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tsparql_demo.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -45,7 +45,7 @@
  rm -f $DBLOGFILE
  rm -f $DBFILE
@@ -1156,8 +1288,10 @@ Last-Update: 2010-05-12
  sleep 5
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < nwdemo.sql
---- a/binsrc/tests/suite/tsql.sh
-+++ b/binsrc/tests/suite/tsql.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tsql.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tsql.sh	2012-05-02 15:35:10.443138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tsql.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -37,7 +37,7 @@
  MAKECFG_FILE $TESTCFGFILE $PORT $CFGFILE
  
@@ -1185,8 +1319,10 @@ Last-Update: 2010-05-12
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < twords.sql
  if test $STATUS -ne 0
---- a/binsrc/tests/suite/tsql2.sh
-+++ b/binsrc/tests/suite/tsql2.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tsql2.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tsql2.sh	2012-05-02 15:35:10.443138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tsql2.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -38,7 +38,7 @@
  MAKECFG_FILE $TESTCFGFILE $PORT $CFGFILE
  
@@ -1196,8 +1332,10 @@ Last-Update: 2010-05-12
  
  RUN $INS $DSN 20 100
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < tschema1.sql
---- a/binsrc/tests/suite/tsql3.sh
-+++ b/binsrc/tests/suite/tsql3.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tsql3.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tsql3.sh	2012-05-02 15:35:10.443138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tsql3.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -37,7 +37,7 @@
  MAKECFG_FILE $TESTCFGFILE $PORT $CFGFILE
  
@@ -1216,8 +1354,10 @@ Last-Update: 2010-05-12
  
      RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT -u follow_std=0 < tviewqual.sql
      if test $STATUS -ne 0
---- a/binsrc/tests/suite/tsqllite.sh
-+++ b/binsrc/tests/suite/tsqllite.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tsqllite.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tsqllite.sh	2012-05-02 15:35:10.443138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tsqllite.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -34,13 +34,13 @@
  MAKECFG_FILE $TESTCFGFILE $PORT $CFGFILE
  
@@ -1234,8 +1374,10 @@ Last-Update: 2010-05-12
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < twords.sql
  if test $STATUS -ne 0
---- a/binsrc/tests/suite/tsqlo.sh
-+++ b/binsrc/tests/suite/tsqlo.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tsqlo.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tsqlo.sh	2012-05-02 15:35:10.443138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tsqlo.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -91,7 +91,7 @@
  rm -f $DBFILE
  MAKECFG_FILE $TESTCFGFILE $PORT $CFGFILE
@@ -1271,8 +1413,10 @@ Last-Update: 2010-05-12
  cd ..
  
  fi
---- a/binsrc/tests/suite/tstriping.sh
-+++ b/binsrc/tests/suite/tstriping.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tstriping.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tstriping.sh	2012-05-02 15:35:10.443138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tstriping.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -56,7 +56,7 @@
  
  MAKECFG_FILE $TESTCFGFILE $PORT $CFGFILE
@@ -1291,8 +1435,10 @@ Last-Update: 2010-05-12
  RUN $ISQL $DS1 ERRORS=STDOUT VERBOSE=OFF PROMPT=OFF < toutdskck.sql 
  if test $STATUS -ne 0
  then
---- a/binsrc/tests/suite/tsxml.sh
-+++ b/binsrc/tests/suite/tsxml.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tsxml.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tsxml.sh	2012-05-02 15:35:10.443138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tsxml.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -39,7 +39,7 @@
  cat $TESTCFGFILE | sed -e "s/PORT/$PORT/g" -e "s/CASE_MODE/$CASE_MODE/g" > $CFGFILE
  
@@ -1302,8 +1448,10 @@ Last-Update: 2010-05-12
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < schemasource/load_tables.isql
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < schemasource/vsputils.isql
---- a/binsrc/tests/suite/ttutorial.sh
-+++ b/binsrc/tests/suite/ttutorial.sh
+Index: virtuoso-opensource/binsrc/tests/suite/ttutorial.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/ttutorial.sh	2012-05-02 15:35:10.447138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/ttutorial.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -118,7 +118,7 @@
  cp tmp.ini $CFGFILE
  rm tmp.ini
@@ -1313,8 +1461,10 @@ Last-Update: 2010-05-12
  sleep 1
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT EXEC="'status()'"
  if test $STATUS -ne 0
---- a/binsrc/tests/suite/tupgrade_recov.sh
-+++ b/binsrc/tests/suite/tupgrade_recov.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tupgrade_recov.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tupgrade_recov.sh	2012-05-02 15:35:10.447138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tupgrade_recov.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -36,7 +36,7 @@
  MAKECFG_FILE $TESTCFGFILE $PORT $CFGFILE
  
@@ -1360,8 +1510,10 @@ Last-Update: 2010-05-12
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < recovck1.sql
  if test $STATUS -ne 0
---- a/binsrc/tests/suite/tvad.sh
-+++ b/binsrc/tests/suite/tvad.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tvad.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tvad.sh	2012-05-02 15:35:10.447138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tvad.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -74,13 +74,13 @@
    #SHUTDOWN_SERVER
    STOP_SERVER
@@ -1387,8 +1539,10 @@ Last-Update: 2010-05-12
  
  DoCommand  $DSN "select \"DB\".\"DBA\".\"VAD_PACK\" ('t1.xml', '', 't1.vad');" "VAD_PACK 1"
  DoCommand  $DSN "select \"DB\".\"DBA\".\"VAD_PACK\" ('t2.xml', '', 't2.vad');" "VAD_PACK 2"
---- a/binsrc/tests/suite/tvad2.sh
-+++ b/binsrc/tests/suite/tvad2.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tvad2.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tvad2.sh	2012-05-02 15:35:10.447138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tvad2.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -72,13 +72,13 @@
    echo "+ " $ISQL $_dsn dba dba ERRORS=STDOUT VERBOSE=OFF PROMPT=OFF "EXEC=$command" $*   >> $LOGFILE 
  
@@ -1414,8 +1568,10 @@ Last-Update: 2010-05-12
  
  DoCommand  $DSN "select \"DB\".\"DBA\".\"VAD_PACK\" ('vad_test1.xml', '', 'vad_test1.vad');" "VAD_PACK 1"
  DoCommand  $DSN "select \"DB\".\"DBA\".\"VAD_PACK\" ('vad_test2.xml', '', 'vad_test2.vad');" "VAD_PACK 2"
---- a/binsrc/tests/suite/tvsp.sh
-+++ b/binsrc/tests/suite/tvsp.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tvsp.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tvsp.sh	2012-05-02 15:35:10.447138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tvsp.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -38,7 +38,7 @@
  MAKECFG_FILE $TESTCFGFILE $PORT $CFGFILE
  
@@ -1425,8 +1581,10 @@ Last-Update: 2010-05-12
  
  RUN $ISQL $DSN PROMPT=OFF VERBOSE=OFF ERRORS=STDOUT < tvsp.sql
  
---- a/binsrc/tests/suite/tvspx.sh
-+++ b/binsrc/tests/suite/tvspx.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tvspx.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tvspx.sh	2012-05-02 15:35:10.447138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tvspx.sh	2012-05-02 16:22:49.435213273 +0200
 @@ -303,7 +303,7 @@
  #MakeIni
  MakeConfig 
@@ -1436,8 +1594,10 @@ Last-Update: 2010-05-12
  sleep 1
  cd ..
  DoCommand $DSN "DB.DBA.VHOST_DEFINE ('*ini*', '*ini*', '/', '/', 0, 0, NULL,  NULL, NULL, NULL, 'dba', NULL, NULL, 0);"
---- a/binsrc/tests/suite/tvspxex.sh
-+++ b/binsrc/tests/suite/tvspxex.sh
+Index: virtuoso-opensource/binsrc/tests/suite/tvspxex.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/tvspxex.sh	2012-05-02 15:35:10.447138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/tvspxex.sh	2012-05-02 16:22:49.439213272 +0200
 @@ -2597,7 +2597,7 @@
  #MakeIni
  MakeConfig 
@@ -1447,9 +1607,11 @@ Last-Update: 2010-05-12
  sleep 1
  
  
---- a/binsrc/tests/suite/twcopy.sh
-+++ b/binsrc/tests/suite/twcopy.sh
-@@ -598,7 +598,7 @@
+Index: virtuoso-opensource/binsrc/tests/suite/twcopy.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/twcopy.sh	2012-05-02 15:35:10.447138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/twcopy.sh	2012-05-02 16:22:49.439213272 +0200
+@@ -608,7 +608,7 @@
  
  
  MakeIni
@@ -1458,8 +1620,10 @@ Last-Update: 2010-05-12
  CHECK_HTTP_PORT $TPORT
  cd ..
  
---- a/binsrc/tests/suite/twiki.sh
-+++ b/binsrc/tests/suite/twiki.sh
+Index: virtuoso-opensource/binsrc/tests/suite/twiki.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/twiki.sh	2012-05-02 15:35:10.447138709 +0200
++++ virtuoso-opensource/binsrc/tests/suite/twiki.sh	2012-05-02 16:22:49.439213272 +0200
 @@ -132,7 +132,7 @@
  	    LOG "ODS & Blog2 VAD packages are not built"
  	fi
@@ -1469,8 +1633,10 @@ Last-Update: 2010-05-12
  	sleep 1
  
  
---- a/binsrc/tests/suite/txslt.sh
-+++ b/binsrc/tests/suite/txslt.sh
+Index: virtuoso-opensource/binsrc/tests/suite/txslt.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/suite/txslt.sh	2012-05-02 15:35:10.451138710 +0200
++++ virtuoso-opensource/binsrc/tests/suite/txslt.sh	2012-05-02 16:22:49.439213272 +0200
 @@ -133,7 +133,7 @@
  mkdir xslt
  cd xslt
@@ -1480,8 +1646,10 @@ Last-Update: 2010-05-12
  cd ..
  
  MakeSQLXML
---- a/binsrc/tests/tpcrun/tpc_run.sh
-+++ b/binsrc/tests/tpcrun/tpc_run.sh
+Index: virtuoso-opensource/binsrc/tests/tpcrun/tpc_run.sh
+===================================================================
+--- virtuoso-opensource.orig/binsrc/tests/tpcrun/tpc_run.sh	2012-05-02 15:35:10.475138711 +0200
++++ virtuoso-opensource/binsrc/tests/tpcrun/tpc_run.sh	2012-05-02 16:22:49.439213272 +0200
 @@ -184,7 +184,7 @@
      BANNER "INITIALIZE TPC BENCHMARK DATABASE"
  

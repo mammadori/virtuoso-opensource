@@ -2,8 +2,10 @@ Description: FTBFS on kFreeBSD
  Fix preprocessor environment detection to properly recognize kFreeBSD.
 Author: Obey Arthur Liu <arthur@milliways.fr>
 Last-Update: 2010-02-28
---- a/libsrc/Dk/Dksystem.h
-+++ b/libsrc/Dk/Dksystem.h
+Index: virtuoso-opensource/libsrc/Dk/Dksystem.h
+===================================================================
+--- virtuoso-opensource.orig/libsrc/Dk/Dksystem.h	2012-05-02 15:35:11.779138745 +0200
++++ virtuoso-opensource/libsrc/Dk/Dksystem.h	2012-05-02 16:23:15.187213944 +0200
 @@ -141,7 +141,7 @@
  #endif
  

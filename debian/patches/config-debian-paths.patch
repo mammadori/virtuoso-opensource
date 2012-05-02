@@ -2,9 +2,11 @@ Description: config debian paths
  Make installation paths more Debian compatible.
 Author: Obey Arthur Liu <arthur@milliways.fr>
 Last-Update: 2011-07-29
---- a/configure
-+++ b/configure
-@@ -3707,14 +3707,14 @@
+Index: virtuoso-opensource/configure
+===================================================================
+--- virtuoso-opensource.orig/configure	2012-05-02 16:21:29.939211199 +0200
++++ virtuoso-opensource/configure	2012-05-02 16:22:36.211212927 +0200
+@@ -3601,14 +3601,14 @@
  		prefix=/usr
  		localstatedir=/var
  	fi
@@ -27,8 +29,10 @@ Last-Update: 2011-07-29
  	;;
  
    [Gg][Ee][Nn][Tt][Oo][Oo])			# Gentoo
---- a/configure.in
-+++ b/configure.in
+Index: virtuoso-opensource/configure.in
+===================================================================
+--- virtuoso-opensource.orig/configure.in	2012-05-02 16:01:14.000000000 +0200
++++ virtuoso-opensource/configure.in	2012-05-02 16:22:36.215212927 +0200
 @@ -156,14 +156,14 @@
  		prefix=/usr
  		localstatedir=/var

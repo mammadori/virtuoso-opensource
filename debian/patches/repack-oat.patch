@@ -2,9 +2,11 @@ Description: Fix OAT related code after repacking
  Fix a few usages of OAT after partial removal through repacking.
 Author: Obey Arthur Liu <arthur@milliways.fr>
 Last-Update: 2010-07-11
---- a/binsrc/oat/toolkit/loader.js
-+++ b/binsrc/oat/toolkit/loader.js
-@@ -1652,7 +1652,6 @@
+Index: virtuoso-opensource/binsrc/oat/toolkit/loader.js
+===================================================================
+--- virtuoso-opensource.orig/binsrc/oat/toolkit/loader.js	2012-05-02 15:35:10.123138701 +0200
++++ virtuoso-opensource/binsrc/oat/toolkit/loader.js	2012-05-02 16:23:21.823214117 +0200
+@@ -1661,7 +1661,6 @@
  	svgsparql:"geometry",
  	timeline:["slider","tlscale","resize"],
  	tree:"ghostdrag",
