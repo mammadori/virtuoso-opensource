@@ -1,0 +1,14 @@
+Description: Fix OAT related code after repacking
+ Fix a few usages of OAT after partial removal through repacking.
+Author: Obey Arthur Liu <arthur@milliways.fr>
+Last-Update: 2010-07-11
+--- a/binsrc/oat/toolkit/loader.js
++++ b/binsrc/oat/toolkit/loader.js
+@@ -1652,7 +1652,6 @@
+ 	svgsparql:"geometry",
+ 	timeline:["slider","tlscale","resize"],
+ 	tree:"ghostdrag",
+-	webclip:"webclipbinding",
+ 	win:["drag","layers"],
+ 	ws:["xml","soap","ajax","schema","connection"],
+ 	xml:["xpath"],
