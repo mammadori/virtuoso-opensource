@@ -1,0 +1,22 @@
+Index: virtuoso-opensource-6.1.3+dfsg1/binsrc/VirtuosoClient.Net/Makefile.mono
+===================================================================
+--- virtuoso-opensource-6.1.3+dfsg1.orig/binsrc/VirtuosoClient.Net/Makefile.mono	2012-01-31 18:24:06.626254506 +0000
++++ virtuoso-opensource-6.1.3+dfsg1/binsrc/VirtuosoClient.Net/Makefile.mono	2012-01-31 18:24:41.062456289 +0000
+@@ -83,7 +83,7 @@
+ 
+ ifeq  (ADONET2, $(ADONETVERSION))
+ 
+-CSC		= gmcs
++CSC		= mono-csc
+ 
+ #CSFLAGS	= -debug+ /d:MONO /d:DEBUG /d:DEBUG_IO /d:ADONET2
+ CSFLAGS		= /optimize+ /d:MONO /d:ADONET2
+@@ -98,7 +98,7 @@
+ 
+ else
+ 
+-CSC		= mcs
++CSC		= mono-csc
+ 
+ #CSFLAGS	= -debug+ /d:MONO /d:DEBUG /d:DEBUG_IO
+ CSFLAGS		= /optimize+ /d:MONO
