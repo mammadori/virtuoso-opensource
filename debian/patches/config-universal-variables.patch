@@ -2,9 +2,11 @@ Description: config universal variables
  Eliminate non-universal variables.
 Author: Obey Arthur Liu <arthur@milliways.fr>
 Last-Update: 2011-07-28
---- a/binsrc/samples/demo/default-virtuoso.ini
-+++ b/binsrc/samples/demo/default-virtuoso.ini
-@@ -117,7 +117,7 @@
+Index: virtuoso-opensource/binsrc/samples/demo/default-virtuoso.ini
+===================================================================
+--- virtuoso-opensource.orig/binsrc/samples/demo/default-virtuoso.ini	2012-05-02 15:35:10.291138705 +0200
++++ virtuoso-opensource/binsrc/samples/demo/default-virtuoso.ini	2012-05-02 16:22:45.587213172 +0200
+@@ -151,7 +151,7 @@
  KeepConnectionOnFixedThread	= 0
  
  [Replication]
@@ -13,7 +15,7 @@ Last-Update: 2011-07-28
  ServerEnable			= 1
  QueueMax			= 50000
  
-@@ -169,7 +169,7 @@
+@@ -203,7 +203,7 @@
  
  
  [Zero Config]
