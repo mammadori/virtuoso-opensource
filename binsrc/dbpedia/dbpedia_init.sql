@@ -1158,6 +1158,15 @@ http('            <br/>\n');
 http('            Enjoy!\n');
 http('            </div>\n');
 http('        </div>\n');
+http('        <script>');
+http('            var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-27344094-2"]);');
+http('            _gaq.push(["_trackPageview"]);');
+http('             (function() {var ga = document.createElement("script");');
+http('                 ga.type = "text/javascript";ga.async = true;');
+http('                 ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";');
+http('                 var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);');
+http('             })();');
+http('        </script>');
 http('    </body>\n');
 http('</html>\n');
 
