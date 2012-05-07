@@ -158,6 +158,20 @@ Description: high-performance database - demo module
  This package contains the Virtuoso Application Distribution module
  for the demonstration application.
 
+Package: virtuoso-vad-dbpedia
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}, virtuoso-opensource
+Description: high-performance database - demo module
+ OpenLink Virtuoso is a high-performance object-relational SQL database.
+ It provides transactions, a smart SQL compiler, hot backup, SQL:1999
+ support, a powerful stored-procedure language supporting server-side
+ Java or .NET, and more. It supports all major data-access interfaces,
+ including ODBC, JDBC, ADO.NET, and OLE/DB.
+ .
+ This package contains the Virtuoso Application Distribution module
+ for DBpedia page rendering.
+
 Package: virtuoso-vad-tutorial
 Section: doc
 Architecture: all
