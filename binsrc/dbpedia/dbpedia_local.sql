@@ -59,18 +59,18 @@ create procedure dbp_setup ()
 
   if (not isstring(registry_get ('dbp_vhost') ))
     registry_set ('dbp_vhost', 'dbpedia.org');
-    
+
   registry_set('dbp_graph_abr',     replace(registry_get('dbp_graph'), 'http://',''));
   registry_set('dbp_graph_decoded', 'http%%3A%%2F%%2F'||registry_get('dbp_graph_abr'));
-  
-  registry_set('dbp_domain_abr',      replace(registry_get('dbp_domain'),'http://',''));
+
+  registry_set('dbp_domain_abr',      replace(registry_get('dbp_domain'), 'http://',''));
   registry_set('dbp_domain_decoded',  'http%%3A%%2F%%2F'||registry_get('dbp_domain_abr'));
   registry_set('dbp_resource_decoded',registry_get('dbp_domain_decoded') || '%%2Fresource%%2F%U');
   registry_set('dbp_property_decoded',registry_get('dbp_domain_decoded') || '%%2Fproperty%%2F%U');
-  
+
   registry_set('dbp_decode_param_U', 'U');
   registry_set('dbp_decode_param_V', 'V');
-  
+
   if (registry_get ('dbp_decode_iri') = 'on')
   {
     registry_set('dbp_resource_decoded',registry_get('dbp_domain_decoded') || '%%2Fresource%%2F%s');

@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" 
     xmlns:dbpprop="http://dbpedia.org/property/" 
+    xmlns:dbpprop-<?= registry_get('dbp_lang')?>="http://<?= registry_get('dbp_lang')?>.dbpedia.org/property/" 
     xmlns:foaf="http://xmlns.com/foaf/0.1/" 
     version="XHTML+RDFa 1.0" xml:lang="en">
 <?vsp
@@ -70,8 +71,8 @@
    _resource_ := replace (_resource_, '/resource_vsp/', '', 1);
    if (_resource_ not like 'nodeID:%') 
      {
-       -- if rousource use custom domain, else use http://dbpedia.org
-       if (_resource_ like '/page/%')
+--------- if rousource use custom domain, else use http://dbpedia.org
+       if (_resource_ like '/page/%' OR _resource_ like '/property/%' )
          _resource_ := registry_get('dbp_domain') || _resource_;
        else
          _resource_ := 'http://dbpedia.org' || _resource_;
@@ -222,11 +223,11 @@
     <link rel="timegate" type="text/html" href="http://mementoarchive.lanl.gov/dbpedia/timegate/<?= _resource_ ?>" title="Time Machine" />
     <link rel="stylesheet" type="text/css" href="/statics/<?=either (white_page, 'style_w.css', 'style.css')?>" />
     <link href="/statics/highlighter.css" type="text/css" rel="stylesheet" charset="utf-8" />
-    <link rel="foaf:primarytopic" href="<?= page_resource_uri ?>"/>
-    <link rev="describedby" href="<?= page_resource_uri ?>"/>
+    <link rel="foaf:primarytopic" href="<?vsp http (dbp_ldd_get_proxy (page_resource_uri)); ?>"/>
+    <link rev="describedby" href="<?vsp http (dbp_ldd_get_proxy (page_resource_uri)); ?>"/>
     <script type="text/javascript" src="/statics/script.js"></script>
 </head>
-<body onload="init();" about="<?V page_resource_uri ?>">
+<body onload="init();" about="<?vsp http (sprintf ('%'||registry_get('dbp_decode_param_V'), page_resource_uri)); ?>">
     <div id="header">
       <div id="hd_l">
 	  <h1 id="title">About: <a href="<?vsp http (dbp_ldd_get_proxy (page_resource_uri)); ?>"><?vsp http (sprintf ('%s', label)); ?></a></h1>
@@ -247,7 +248,7 @@
     </div> <!-- header -->
     <div id="content">
 
-      <p><?vsp http (sprintf ('%s', _subject)); ?></p>
+      <p><?vsp http (sprintf ('%'||registry_get('dbp_decode_param_V'), _subject)); ?></p>
 <!-- proptable -->
       <table class="description"><tr><th>Property</th><th>Value</th></tr>
 
