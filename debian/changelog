@@ -1,9 +1,10 @@
-virtuoso-opensource (6.1.5+dev6-1) unstable; urgency=low
+virtuoso-opensource (6.1.5+dev6-git780b-1) UNRELEASED; urgency=low
 
-  * New upstream release.
+  * New upstream release git 780b2d390.
   * Added build of DBpedia vad.
+  * Integrated dbpedia_it and dbpedia_el patches to vad.
 
- -- Marco Amadori <marco.amadori@gmail.com>  Mon, 07 May 2012 10:21:17 +0200
+ -- Marco Amadori <marco.amadori@gmail.com>  Mon, 21 May 2012 10:58:22 +0200
 
 virtuoso-opensource (6.1.3+dfsg1-2.1) unstable; urgency=low
 
