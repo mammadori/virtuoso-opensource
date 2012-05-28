@@ -1,0 +1,17 @@
+.SL table {
+    border: none;
+}
+
+.SL tr td {
+    border: none;
+    padding: 0;
+}
+.SL, .SL input, .SL textarea {
+    width: 860px;
+}
+input[type="submit"] {
+    width: auto;
+}
+input[type="reset"] {
+    width: auto;
+}

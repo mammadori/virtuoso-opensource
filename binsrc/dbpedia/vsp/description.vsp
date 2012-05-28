@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:dbpprop="http://dbpedia.org/property/"
+<html class="no-js" dir="ltr"
+    xmlns="http://www.w3.org/1999/xhtml"
+    version="XHTML+RDFa 1.0" xml:lang="it"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
     xmlns:dbpedia-owl="http://dbpedia.org/ontology/"
-    xmlns:dbpprop-<?= registry_get('dbp_lang')?>="http://<?= registry_get('dbp_lang')?>.dbpedia.org/property/" 
-    xmlns:foaf="http://xmlns.com/foaf/0.1/" 
-    version="XHTML+RDFa 1.0" xml:lang="en">
+    xmlns:dbpprop="http://dbpedia.org/property/"
+    xmlns:dbpprop-<?= registry_get('dbp_lang')?>="http://<?= registry_get('dbp_lang')?>.dbpedia.org/property/">
 <?vsp
 --
 --  $Id$
@@ -14,6 +15,7 @@
 --  project.
 --
 --  Copyright (C) 1998-2012 OpenLink Software
+--  Copyright (C) 2012 SpazioDati S.r.l
 --
 --  This project is free software; you can redistribute it and/or modify it
 --  under the terms of the GNU General Public License as published by the
@@ -27,7 +29,6 @@
 --  You should have received a copy of the GNU General Public License along
 --  with this program; if not, write to the Free Software Foundation, Inc.,
 --  51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
---
 --
 
    declare _G, _S, _P, _O, odd_position any;
@@ -45,11 +46,11 @@
    tmp_lines := lines;
    iri_type := 'unknown';
    if (length (dset))
-     { 
+     {
        langs := vector (dset, 1.0);
        tmp_lines := vector ('Accept-Language: ' || dset);
      }
-   else 
+   else
      {
        declare tmp any;
        tmp := sprintf_inverse (registry_get ('dbp_graph'), 'http://%s.dbpedia.org', 0);
@@ -96,7 +97,7 @@
    -- HACK properties !!!
 
    if (strstr (page_resource_uri, registry_get('dbp_domain') || '/resource/property') = 0)
-     {	   
+     {
        page_resource_uri := replace (page_resource_uri,
        registry_get('dbp_domain') || '/resource/property', registry_get('dbp_domain') || '/property');
      }
@@ -104,8 +105,8 @@
    -- setup rdf alternative links
 
    rdf_link := 'http://'|| http_request_header (http_request_header (), 'Host') 
-   		||'/sparql?default-graph-uri=http%3A%2F%2F'||replace(registry_get('dbp_graph'),'http://','')||'&query=DESCRIBE+<' ||
-		replace (page_resource_uri, '%', '%25') || '>';
+                ||'/sparql?default-graph-uri=http%3A%2F%2F'||replace(registry_get('dbp_graph'),'http://','')||'&query=DESCRIBE+<' ||
+                replace (page_resource_uri, '%', '%25') || '>';
    gen_rdf_link := rdf_link;
    csv_link := rdf_link||'&format=text%2Fcsv'; 
    cxml_link := rdf_link||'&format=text%2Fcxml'; 
@@ -164,7 +165,7 @@
    links := links || sprintf ('<%s>; rel="alternate"; type="text/html"; title="Structured Descriptor Document (Microdata/HTML format)", ', gen_rdf_link || sprintf ('&output=%U', 'text/html') ); 
    links := links || sprintf ('<%s>; rel="alternate"; type="application/ld+json"; title="Structured Descriptor Document (JSON-LD format)", ', gen_rdf_link || sprintf ('&output=%U', 'application/ld+json') ); 
 
-   links := links || sprintf ('<%s>; rel="http://xmlns.com/foaf/0.1/primaryTopic", ', page_resource_uri); 
+   links := links || sprintf ('<%s>; rel="http://xmlns.com/foaf/0.1/primaryTopic", ', page_resource_uri);
    links := links || sprintf ('<%s>; rev="describedby", ', page_resource_uri); 
    links := links || sprintf ('<http://mementoarchive.lanl.gov/dbpedia/timegate/%s>; rel="timegate"\r\n', _resource_);
 
@@ -207,8 +208,30 @@
 
 <!-- header -->
 <head profile="http://www.w3.org/1999/xhtml/vocab">
-    <title>About: <?vsp http (sprintf ('%s', label)); ?></title>
+    <title>DBpedia Italiana | <?vsp http (sprintf ('%s', label)); ?></title>
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="alternate" type="application/rdf+xml" href="<?=rdf_link2?>" title="Structured Descriptor Document (RDF/XML format)" />
+    <link rel="stylesheet" type="text/css" media="all" href="http://it.dbpedia.org/wp-content/themes/splendio/style.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="http://it.dbpedia.org/wp-content/themes/splendio/style-print.css" />
+    <link rel="stylesheet" type="text/css" href="http://it.dbpedia.org/files/static_style.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold" />
+    <link rel="shortcut icon" href="http://it.dbpedia.org/wp-content/themes/splendio/images/favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" src="http://it.dbpedia.org/wp-content/themes/splendio/js/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="http://it.dbpedia.org/wp-includes/js/jquery/jquery.color.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            if(!$.browser.msie) $("ul li").hover(function() {$(this).siblings().stop().fadeTo(400,0.4);}, function() { $(this).siblings().stop().fadeTo(400,1); });
+        });
+    </script>
+    <link rel="pingback" href="http://it.dbpedia.org/xmlrpc.php" />
+    <link rel="alternate" type="application/rss+xml" title="DBpedia Italiana &raquo; Feed" href="http://it.dbpedia.org/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="DBpedia Italiana &raquo; Feed dei commenti" href="http://it.dbpedia.org/comments/feed/" />
+    
+       <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://it.dbpedia.org/xmlrpc.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://it.dbpedia.org/wp-includes/wlwmanifest.xml" /> 
+    <link rel='next' title='News' href='http://it.dbpedia.org/news/' />
+    <link rel='canonical' href='http://it.dbpedia.org/' />
+
     <link rel="alternate" type="text/rdf+n3" href="<?=rdf_link?>" title="Structured Descriptor Document (N3/Turtle format)" />
     <link rel="alternate" type="application/json+rdf" href="<?=rdf_link4?>" title="Structured Descriptor Document (RDF/JSON format)" />
     <link rel="alternate" type="application/json" href="<?=rdf_link3?>" title="Structured Descriptor Document (RDF/JSON format)" />
@@ -218,40 +241,105 @@
     <?vsp if (__proc_exists ('DB.DBA.RDF_TRIPLES_TO_CXML') is not null) { ?>
     <link rel="alternate" href="<?V cxml_link ?>" type="text/cxml" title="Structured Descriptor Document (CXML format)" />
     <?vsp } ?>
-    <link rel="alternate" href="<?V gen_rdf_link || sprintf ('&output=%U', 'application/microdata+json') ?>" type="application/microdata+json" 	title="Structured Descriptor Document (Microdata/JSON format)" />
-    <link rel="alternate" href="<?V gen_rdf_link || sprintf ('&output=%U', 'text/html') ?>" 		     type="text/html" 			title="Structured Descriptor Document (Microdata/HTML format)" />
-    <link rel="alternate" href="<?V gen_rdf_link || sprintf ('&output=%U', 'application/ld+json') ?>"      type="application/ld+json" 	title="Structured Descriptor Document (JSON-LD format)" />
+    <link rel="alternate" href="<?V gen_rdf_link || sprintf ('&output=%U', 'application/microdata+json') ?>" type="application/microdata+json"  title="Structured Descriptor Document (Microdata/JSON format)" />
+    <link rel="alternate" href="<?V gen_rdf_link || sprintf ('&output=%U', 'text/html') ?>"                  type="text/html"                   title="Structured Descriptor Document (Microdata/HTML format)" />
+    <link rel="alternate" href="<?V gen_rdf_link || sprintf ('&output=%U', 'application/ld+json') ?>"      type="application/ld+json"   title="Structured Descriptor Document (JSON-LD format)" />
     <link rel="timegate" type="text/html" href="http://mementoarchive.lanl.gov/dbpedia/timegate/<?= _resource_ ?>" title="Time Machine" />
-    <link rel="stylesheet" type="text/css" href="/statics/<?=either (white_page, 'style_w.css', 'style.css')?>" />
-    <link href="/statics/highlighter.css" type="text/css" rel="stylesheet" charset="utf-8" />
     <link rel="foaf:primarytopic" href="<?vsp http (dbp_ldd_get_proxy (page_resource_uri)); ?>"/>
     <link rev="describedby" href="<?vsp http (dbp_ldd_get_proxy (page_resource_uri)); ?>"/>
-    <script type="text/javascript" src="/statics/script.js"></script>
+   <!-- <script type="text/javascript" src="/statics/script.js"></script> -->
 </head>
-<body onload="init();" about="<?vsp http (sprintf ('%'||registry_get('dbp_decode_param_V'), page_resource_uri)); ?>">
-    <div id="header">
+
+<body about="<?vsp http (sprintf ('%'||registry_get('dbp_decode_param_V'), page_resource_uri)); ?>"
+      class="home page page-id-2 page-template page-template-onecolumn-page-php logged-in admin-bar">
+
+      <!-- Start - Wrapper -->
+      <div id="wrapper"> 
+        <!-- Start header -->
+        <div id="header">
+          <div class="header-left">
+            <div class="logo">
+              <h1 class="site-title">
+
+                <span><a href="http://it.dbpedia.org/" title="DBpedia Italiana" rel="home" target="_self"><img alt="DBpedia Logo" src="http://it.dbpedia.org/wp-content/themes/splendio/images/Logo-DBpedia-Italiana.png" /></a></span>
+                </h1> 
+              </div>
+              <!-- Start access -->
+              <div id="access">
+                <div class="skip-link screen-reader-text"><a href="#content" title="Skip to content" target="_self">Skip to content</a></div>
+                <div class="menu-header"><ul id="menu-main" class="menu"><li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-27"><a href="http://it.dbpedia.org/" target="_self">Home</a></li>
+                    <li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"><a href="http://it.dbpedia.org/chi-siamo/" target="_self">Chi Siamo</a></li>
+                    <li id="menu-item-21" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21"><a target="_self">Datasets</a>
+
+                      <ul class="sub-menu">
+                        <li id="menu-item-22" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22"><a href="http://it.dbpedia.org/sparql" target="_self">Live Query</a></li>
+                        <li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="http://it.dbpedia.org/datasets/" target="_self">Download</a></li>
+                        <li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26"><a href="http://it.dbpedia.org/rfind/RelFinder.swf" target="_self">Relations Finder</a></li>
+                      </ul>
+                    </li>
+                    <li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="http://it.dbpedia.org/linkeddata/" target="_self">Linked Data</a></li>
+                    <li id="menu-item-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18"><a href="http://it.dbpedia.org/esempi/" target="_self">Esempi Query</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- End access -->
+            </div>
+
+    <div class="header-right">
+ <div class="search">
+  <form method="get" action="#">
+   <fieldset>
+   <p class="search-title">Search</p>
+   <input type="text" value="" name="s"/><button type="submit">GO</button>
+
+   </fieldset>
+  </form>
+ </div>
+ <div class="syndicate">
+  <ul>
+   <li style="opacity: 1; "><a class="s1" href="http://feeds.feedburner.com/dbpediaItalia" title="RSS" target="_self"><em>RSS Feed</em></a></li>
+   <li style="opacity: 1; "><a class="s2" href="http://search.twitter.com/search?q=%23dbpedia_it" title="Twitter" target="_self"><em>Twitter</em></a></li>
+   <li style="opacity: 1; "><a class="s3" href="http://www.facebook.com/pages/DBpedia/112451435436955" title="FaceBook" target="_self"><em>FaceBook</em></a></li>
+
+   <li style="opacity: 1; "><a class="s4" href="#" title="Share" target="_self"><em>Share</em></a></li>
+  </ul>
+ </div>
+</div>
+    <div class="header-image"></div>
+  </div>
+  <!-- End header -->
+  <!-- Start Container -->
+  <div id="container">
+    <!-- Start Content -->
+
+    <div class="SC">
+
+      <!-- Side - List Post-->
+      <div class="SL" about="http://it.dbpedia.org/resource/Rovereto">
+      <h1>&nbsp;</h1>
+      <div>
       <div id="hd_l">
-	  <h1 id="title">About: <a href="<?vsp http (dbp_ldd_get_proxy (page_resource_uri)); ?>"><?vsp http (sprintf ('%s', label)); ?></a></h1>
+          <h1 id="title">About: <a href="<?vsp http (dbp_ldd_get_proxy (page_resource_uri)); ?>" target="_self"><?vsp http (sprintf ('%s', label)); ?></a></h1>
         <div id="homelink">
           <!--?vsp if (white_page = 0) http (txt); ?-->
         </div>
-	<div class="page-resource-uri">
-	    An Entity of Type : <a href="<?= iri_uri ?>"><?= iri_type ?></a>, 
-	    from Named Graph : <a href="<?V project_home_page ?>"><?V project_home_page ?></a>, 
-	    within Data Space : <a href="http://<?V host ?>"><?V host ?></a>
+        <div class="page-resource-uri">
+            An Entity of Type : <a href="<?= iri_uri ?>" target="_self"><?= iri_type ?></a>,
+            from Named Graph : <a href="<?V project_home_page ?>" target="_self"><?V project_home_page ?></a>,
+            within Data Space : <a href="http://<?V host ?>" target="_self"><?V host ?></a>
         </div>
       </div> <!-- hd_l -->
-      <div id="hd_r">
-	  <a href="<?=registry_get('dbp_imprint') ?>" title="About DBpedia">
-	      <img src="/statics/dbpedia_logo.png" height="64" alt="About DBpedia"/>
+      <div id="comment"><?vsp http (sprintf ('%'||registry_get('dbp_decode_param_V'), _subject)); ?></div>
+      <div id="hd_r"></div>
+        <!-- <a href="<?=registry_get('dbp_imprint') ?>" title="About DBpedia">
+         <img src="/statics/dbpedia_logo.png" height="64" alt="About DBpedia"/>
         </a>
-      </div> <!-- hd_r -->
-    </div> <!-- header -->
-    <div id="content">
-
-      <p><?vsp http (sprintf ('%'||registry_get('dbp_decode_param_V'), _subject)); ?></p>
+      -->
+      </div>
+      <div id="content">
 <!-- proptable -->
-      <table class="description"><tr><th>Property</th><th>Value</th></tr>
+      <table class="description"><tbody><tr><th>Property</th><th>Value</th></tr>
 
 <?vsp
       declare sas, printed, vis int;
@@ -266,98 +354,121 @@
 
       --select predicates for resource
       for (select distinct P as PRED from DB.DBA.RDF_QUAD where S = _S and G = _G order by id_to_iri (P)) do
-	{
-	   dbp_ldd_http_print_l (id_to_iri (PRED), odd_position);
+        {
+            if (id_to_iri (PRED) like '%thumbnail') 
+              {
+                http('\n<div id="thumbnail">\n');
+              }
+            else
+              {
+                dbp_ldd_http_print_l (id_to_iri (PRED), odd_position);
+              }
            printed := 0;
            -- select values for each predicate
-	   for (select top 300 O as OBJECT from DB.DBA.RDF_QUAD where S = _S and G = _G and P = PRED) do
+           for (select top 300 O as OBJECT from DB.DBA.RDF_QUAD where S = _S and G = _G and P = PRED) do
               {
-		if (id_to_iri (PRED) in (registry_get('dbp_domain') || '/property/redirect', registry_get('dbp_domain') || '/ontology/wikiPageRedirects') and isiri_id (OBJECT))
+                if (id_to_iri (PRED) in (registry_get('dbp_domain') || '/property/redirect', registry_get('dbp_domain') || '/ontology/wikiPageRedirects') and isiri_id (OBJECT))
                   {
-		    http_rewrite ();
-		    http_status_set (301);	
-		    http_header (sprintf ('Location: %s\n', dbp_ldd_get_proxy (id_to_iri (OBJECT))));
-		    return;
-		  } 
-		vis := dbp_ldd_http_print_r (OBJECT, 0, true_label, PRED, 1, langs);
+                    http_rewrite ();
+                    http_status_set (301);      
+                    http_header (sprintf ('Location: %s\n', dbp_ldd_get_proxy (id_to_iri (OBJECT))));
+                    return;
+                  }
+                if (id_to_iri (PRED) like '%thumbnail') 
+                  {
+                    http('<span class="property"><span class="uri" href="http://it.dbpedia.org/ontology/thumbnail" title="http://dbpedia.org/ontology/thumbnail" content="dbpedia-owl:thumbnail"/></span>');
+                    http(sprintf('<span class="literal"><a class="uri" rel="dbpedia-owl:thumbnail" xmlns:dbpedia-owl="http://dbpedia.org/ontology/" href="%s" content="%s">', id_to_iri(OBJECT), id_to_iri(OBJECT) ));
+                    http(sprintf('<img class="literal" src="%s" alt="thumbnail" title="Thumbnail"/></a></span></div>\n<!-- thumbnail -->\n', id_to_iri(OBJECT) ));
+                    goto closeline;
+                  }
+                else
+                  {
+                    vis := dbp_ldd_http_print_r (OBJECT, 0, true_label, PRED, 1, langs);
+                  }
                 printed := printed + vis;
               }
-	   if (not printed)
+           if (not printed)
              {
                for (select top 100 O as OBJECT from DB.DBA.RDF_QUAD where S = _S and G = _G and P = PRED) do
-		 dbp_ldd_http_print_r (OBJECT, 0, true_label, PRED, 1, all_lang);
+                 dbp_ldd_http_print_r (OBJECT, 0, true_label, PRED, 1, all_lang);
              }
-          
-           if (sas and PRED = rdf_sas_iri ())
-	     { 	 
-	       dbp_ldd_http_print_r (iri_to_id (page_resource_uri), 1, true_label, PRED, 1, langs); 
-	       sas := 0; 
-	     }  
 
-	   http ('</ul></td></tr>');
-	}
+           if (sas and PRED = rdf_sas_iri ())
+             {
+               dbp_ldd_http_print_r (iri_to_id (page_resource_uri), 1, true_label, PRED, 1, langs);
+               sas := 0; 
+             }
+
+           http ('</ul></td></tr>');
+           closeline: 
+           http('');
+           
+        }
       -- print owl:sameAs
       if (sas)
         {
-	   dbp_ldd_http_print_l (id_to_iri (rdf_sas_iri ()), odd_position);
-	   dbp_ldd_http_print_r (iri_to_id (page_resource_uri), 1, null, rdf_sas_iri (), 1, langs); 
-	   http ('</ul></td></tr>');
-	}	
+           dbp_ldd_http_print_l (id_to_iri (rdf_sas_iri ()), odd_position);
+           dbp_ldd_http_print_r (iri_to_id (page_resource_uri), 1, null, rdf_sas_iri (), 1, langs); 
+           http ('</ul></td></tr>');
+        }       
       -- check for reverse triples
       for (select distinct P as PRED from DB.DBA.RDF_QUAD where O = _O and G = _G order by id_to_iri (P)) do
-	{
-	   dbp_ldd_http_print_l (id_to_iri (PRED), odd_position, 1);
+        {
+           dbp_ldd_http_print_l (id_to_iri (PRED), odd_position, 1);
            printed := 0;
-	   for (select top 300 S as OBJECT from DB.DBA.RDF_QUAD where O = _O and G = _G and P = PRED) do
+           for (select top 300 S as OBJECT from DB.DBA.RDF_QUAD where O = _O and G = _G and P = PRED) do
               {
-		vis := dbp_ldd_http_print_r (OBJECT, 0, true_label, PRED, 0, langs);
+                vis := dbp_ldd_http_print_r (OBJECT, 0, true_label, PRED, 0, langs);
                 printed := printed + vis;
               }
-	   if (not printed)
+           if (not printed)
              {
-	       for (select top 100 S as OBJECT from DB.DBA.RDF_QUAD where O = _O and G = _G and P = PRED) do
-		 dbp_ldd_http_print_r (OBJECT, 0, true_label, PRED, 0, all_lang);
+               for (select top 100 S as OBJECT from DB.DBA.RDF_QUAD where O = _O and G = _G and P = PRED) do
+                 dbp_ldd_http_print_r (OBJECT, 0, true_label, PRED, 0, all_lang);
              }
-	   http ('</ul></td></tr>');
-	}
+           http ('</ul></td></tr>');
+        }
 
        if  (odd_position = 0)
-	 {
-	    http_request_status ('HTTP/1.1 404 Not found');
-	    http ('<tr><td colspan="2"><p>No further information is available. (The requested entity is unknown)</p></td></tr>');
-	 }
+         {
+            http_request_status ('HTTP/1.1 404 Not found');
+            http ('<tr><td colspan="2"><p>No further information is available. (The requested entity is unknown)</p></td></tr>');
+         }
 ?>
-      </table>
-    </div> <!--  #content -->
-<!-- footer -->
-    <div id="footer">
+      </tbody></table>
+    </div> 
+    <!--  #content -->
+
+    <!-- footer -->
+    <div>
       <div id="ft_t">
         Browse using:
-	<a href="http://linkeddata.uriburner.com/ode/?uri=<?vsp http_url (page_resource_uri); ?>">OpenLink Data Explorer</a>
+        <a href="http://linkeddata.uriburner.com/ode/?uri=<?vsp http_url (page_resource_uri); ?>">OpenLink Data Explorer</a>
         &nbsp; &nbsp; Raw Data in:
-	<?vsp if (__proc_exists ('DB.DBA.RDF_TRIPLES_TO_CXML') is not null) { ?>
-	<a href="<?= cxml_link ?>">CXML</a> |
-	<?vsp } ?>
+        <?vsp if (__proc_exists ('DB.DBA.RDF_TRIPLES_TO_CXML') is not null) { ?>
+        <a href="<?= cxml_link ?>">CXML</a> |
+        <?vsp } ?>
         <a href="<?= csv_link ?>">CSV</a> | RDF (
         <a href="<?= ntriples ?>">N-Triples</a> 
         <a href="<?= rdf_link ?>">N3/Turtle</a> 
-	<a href="<?= rdf_link3 ?>">JSON</a> 
+        <a href="<?= rdf_link3 ?>">JSON</a> 
         <a href="<?= rdf_link2 ?>">XML</a> ) | OData (
-	<a href="<?= atom_link ?>">Atom</a> 
-	<a href="<?= jsod ?>">JSON</a> )| Microdata (
-	<a href="<?= gen_rdf_link || sprintf ('&output=%U', 'application/microdata+json') ?>">JSON</a>
-        <a href="<?= gen_rdf_link || sprintf ('&output=%U', 'text/html') ?>">HTML</a>) |  
+        <a href="<?= atom_link ?>">Atom</a> 
+        <a href="<?= jsod ?>">JSON</a> )| Microdata (
+        <a href="<?= gen_rdf_link || sprintf ('&output=%U', 'application/microdata+json') ?>">JSON</a>
+        <a href="<?= gen_rdf_link || sprintf ('&output=%U', 'text/html') ?>">HTML</a>) |
         <a href="<?= gen_rdf_link || sprintf ('&output=%U', 'application/ld+json')?>">JSON-LD</a> 
 
         &nbsp; &nbsp;<a href="<?=registry_get('dbp_imprint') ?>">About</a>&nbsp; &nbsp;
       </div> <!-- #ft_t -->
+
       <div id="ft_b">
         <a href="http://linkeddata.org/"><img alt="This material is Open Knowledge" src="/statics/LoDLogo.gif"/></a> &nbsp;
         <a href="<?= project_home_page ?>/sparql"><img alt="W3C Semantic Web Technology" src="/statics/sw-sparql-blue.png"/></a> &nbsp;  &nbsp;
         <a href="http://www.opendefinition.org/"><img alt="This material is Open Knowledge" src="/statics/od_80x15_red_green.png"/></a>
       </div> <!-- #ft_b -->
       <div id="ft_ccbysa">
-	<?vsp dbp_wikipedia_cc_by_sa(_S, _G); ?>
+        <?vsp dbp_wikipedia_cc_by_sa(_S, _G); ?>
       </div> <!-- #ft_ccbysa -->
     </div> <!-- #footer -->
     <script type="text/javascript">
@@ -366,6 +477,65 @@
       (function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
       var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
     </script>
- </body>
+      </div>
+      <!-- End - Side Left --> 
+      <!-- Start - Side Right --><!-- End - Side Right --> 
+    </div>
+    <!-- End - SC --> 
+  </div>
+
+  <!-- End Container --> 
+  <!-- Start - Footer -->
+  <div id="footer">
+    <!-- Start Footer Widgets -->
+    <div id="footer-widget-area">
+      <div id="first" class="widget-area">
+        <ul>
+          <li id="text-2" class="widget-container">
+            <h3 class="widget-title">spaziodati.eu</h3>
+
+            <div class="textwidget"><a href="http://www.spaziodati.eu/" target="_self"><img alt="Logo SpazioDati" height="120" src="http://it.dbpedia.org/files/spaziodati_logo.jpg" style="margin-right:25px" title="SpazioDati.eu" width="176"/></a></div>
+          </li>
+        </ul>
+      </div>
+      <!-- #first .widget-area -->
+
+      <div id="second" class="widget-area">
+        <ul>
+          <li id="text-3" class="widget-container">
+            <h3 class="widget-title">FBK</h3>
+
+            <div class="textwidget"><a href="http://www.fbk.eu//" target="_self"><img alt="Logo FBK" height="120" src="http://it.dbpedia.org/files/fbk_logo.png" style="margin-right:25px" title="Fondazione Bruno Kessler" width="141"/> </a></div>
+          </li>
+        </ul>
+      </div>
+      <!-- #second .widget-area -->
+
+      <div id="third" class="widget-area">
+        <ul>
+          <li id="text-4" class="widget-container">
+
+            <h3 class="widget-title">top-IX</h3>
+            <div class="textwidget"><a href="http://www.top-ix.org/" target="_self"><img alt="Logo top-ix" height="86" src="http://it.dbpedia.org/files/topix_logo.png" title="Consorzio Top-ix" width="250"/></a></div>
+          </li>
+        </ul>
+      </div>
+      <!-- #third .widget-area -->
+
+    </div>
+    <!-- #footer-widget-area -->
+    <div id="footer-widget-area-bot"></div>
+
+    <!-- End Footer Widgets -->
+
+    <div class="site-info">
+     © 2010 <a href="http://it.dbpedia.org/" title="DBpedia Italiana" rel="home" target="_self">DBpedia Italiana</a>. All Rights Reserved <br/>
+  <a href="http://designdisease.com/" target="_self">Splendio Theme</a> modified by <a href="http://www.10k-design.com" target="_self">10k-design.com</a>
+ </div>
+  <!-- End - Footer --> 
+</div>
+ <!-- End - Wrapper --> 
+ </div>
+</body>
 </html>
 
