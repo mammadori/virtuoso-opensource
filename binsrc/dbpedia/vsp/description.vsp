@@ -223,6 +223,11 @@
             if(!$.browser.msie) $("ul li").hover(function() {$(this).siblings().stop().fadeTo(400,0.4);}, function() { $(this).siblings().stop().fadeTo(400,1); });
         });
     </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#thumbnail').insertBefore('#comment');
+        });
+    </script>
     <link rel="pingback" href="http://it.dbpedia.org/xmlrpc.php" />
     <link rel="alternate" type="application/rss+xml" title="DBpedia Italiana &raquo; Feed" href="http://it.dbpedia.org/feed/" />
     <link rel="alternate" type="application/rss+xml" title="DBpedia Italiana &raquo; Feed dei commenti" href="http://it.dbpedia.org/comments/feed/" />
@@ -537,5 +542,4 @@
  <!-- End - Wrapper --> 
  </div>
 </body>
-</html>
-
+</html>    
