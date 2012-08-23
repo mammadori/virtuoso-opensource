@@ -1024,7 +1024,7 @@ http('\n');
 http('<option id="q1" value=\'SELECT ?name, ?surname WHERE {\n');
 http('  ?person a <http://dbpedia.org/ontology/Person> . \n');
 http('  ?person   <http://it.dbpedia.org/property/nome>    ?name .\n');
-http('  ?person   <http://it.dbpedia.org/property/cognome> ?surname\n');
+http('  ?person   <http://it.dbpedia.org/property/cognome> ?surname .\n');
 http('  ?person   <http://it.dbpedia.org/property/nazionalità> "italiana"@it .\n');
 http('  FILTER( isLiteral(?name) AND isLiteral(?surname) )\n');
 http('}\'>Give me all Italian people in DBPedia</option>\n');
