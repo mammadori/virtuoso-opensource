@@ -1093,6 +1093,7 @@ http('              <label for="format" class="n">Display Results As:</label>\n'
 http('              <select name="format">\n');
 http('                <option value="auto">Auto</option>\n');
 http('                <option value="text/html" selected="selected">HTML</option>\n');
+http('                <option value="text/csv">CSV</option>\n');
 http('                <option value="application/vnd.ms-excel">Spreadsheet</option>\n');
 http('                <option value="application/sparql-results+xml">XML</option>\n');
 http('                <option value="application/sparql-results+json">JSON</option>\n');
