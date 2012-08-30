@@ -1153,7 +1153,7 @@ http('            <li>Results provided in the HTML are usually a subset of what 
 http('            <li>All queries are time and resource limited.<b> notice that this means that sometime you will get incomplete or even no results</b>.\n');
 http('                If this is happening often for you or you really want to run more complex queries please contact us.</li>\n');
 http('            <li>The endpoint is updated monthly so query result can vary in time.</li>\n');
-http('            <li>This service is beta.<b>Please help us by providing feedback on our <a href="info@spaziodati.eu">email</a></b>. We\'ll be looking forward to hear from you.</li>\n');
+http('            <li>This service is beta.<b>Please help us by providing feedback on our <a href="mailto:info@spaziodati.eu">email</a></b>. We\'ll be looking forward to hear from you.</li>\n');
 http('          </ul>\n');
 http('            <br/>\n');
 http('            Enjoy!\n');
