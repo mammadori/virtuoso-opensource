@@ -213,7 +213,7 @@
     <link rel="alternate" type="application/rdf+xml" href="<?=rdf_link2?>" title="Structured Descriptor Document (RDF/XML format)" />
     <link rel="stylesheet" type="text/css" media="all" href="http://it.dbpedia.org/wp-content/themes/splendio/style.css" />
     <link rel="stylesheet" type="text/css" media="all" href="http://it.dbpedia.org/wp-content/themes/splendio/style-print.css" />
-    <link rel="stylesheet" type="text/css" href="http://it.dbpedia.org/files/static_style.css" />
+    <link rel="stylesheet" type="text/css" href="/statics/it_style.css" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold" />
     <link rel="shortcut icon" href="http://it.dbpedia.org/wp-content/themes/splendio/images/favicon.ico" type="image/x-icon" />
     <script type="text/javascript" src="http://it.dbpedia.org/wp-content/themes/splendio/js/jquery-1.4.1.min.js"></script>
@@ -321,7 +321,7 @@
     <div class="SC">
 
       <!-- Side - List Post-->
-      <div class="SL" about="http://it.dbpedia.org/resource/Rovereto">
+      <div class="SL">
       <h1>&nbsp;</h1>
       <div>
       <div id="hd_l">
@@ -445,7 +445,7 @@
     <!--  #content -->
 
     <!-- footer -->
-    <div>
+    <div id="footer_internal">
       <div id="ft_t">
         Browse using:
         <a href="http://linkeddata.uriburner.com/ode/?uri=<?vsp http_url (page_resource_uri); ?>">OpenLink Data Explorer</a>
@@ -464,8 +464,8 @@
         <a href="<?= gen_rdf_link || sprintf ('&output=%U', 'text/html') ?>">HTML</a>) |
         <a href="<?= gen_rdf_link || sprintf ('&output=%U', 'application/ld+json')?>">JSON-LD</a> 
 
-        &nbsp; &nbsp;<a href="<?=registry_get('dbp_imprint') ?>">About</a>&nbsp; &nbsp;
-      </div> <!-- #ft_t -->
+        &nbsp; &nbsp;<!-- <a href="<?=registry_get('dbp_imprint') ?>">About</a>&nbsp; &nbsp;-->
+      </div>  <!-- #ft_t -->
 
       <div id="ft_b">
         <a href="http://linkeddata.org/"><img alt="This material is Open Knowledge" src="/statics/LoDLogo.gif"/></a> &nbsp;
@@ -534,7 +534,6 @@
     <!-- End Footer Widgets -->
 
     <div class="site-info">
-     © 2010 <a href="http://it.dbpedia.org/" title="DBpedia Italiana" rel="home" target="_self">DBpedia Italiana</a>. All Rights Reserved <br/>
   <a href="http://designdisease.com/" target="_self">Splendio Theme</a> modified by <a href="http://www.10k-design.com" target="_self">10k-design.com</a>
  </div>
   <!-- End - Footer --> 
@@ -542,4 +541,5 @@
  <!-- End - Wrapper --> 
  </div>
 </body>
-</html>    
+</html>
+

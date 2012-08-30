@@ -1,5 +1,7 @@
 /* @override http://194.116.72.119:8890/statics/style.css */
 
+.SL {width:860px;}
+
 #hd_l { margin-right: 120px; }
 #hd_r {position: absolute;
 right: 10px;
@@ -75,9 +77,7 @@ table.description li { list-style-type: square;
 margin: .2em 0;
 color: #999;}
 
-
-
-.uri { white-space: nowrap; }
+.uri { white-space: normal; word-break: break-all; }
 .uri a, a.uri { text-decoration: none; }
 
 .uri a:hover, a.uri:hover {text-decoration:underline; }
@@ -96,5 +96,8 @@ a.expander { text-decoration: none; }
 
 #thumbnail {
   float: right;
-  margin-top: -170px;
+  
 }
+#comment {margin-bottom:52px;}
+
+#footer_internal{clear:both;}
